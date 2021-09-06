@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block title%} {{post.title}} {%endblock%}
+
+{%block body%}
+
+<div class="container" style="padding: .2rem;">
+    <div class="row">
+        <div class="col sl12">
+            <center style="background-color: #283c50;">
+                <h1 style="padding: .2rem;margin-top: 2rem; color: #bdddff;text-transform: uppercase;font-weight: 700"># 
+                    {{post.title}} #</h1>
+            </center>
+            <br>
+            <div class="container" style="margin: auto;border-radius: 1rem;">
+                <center> <img src="/media/{{post.image}}"
+                        style="width: 80%;height: 400px; padding: 1rem; border-radius: 1rem;"> </center>
+                <div style="width: 90%;margin: auto;">
+                    {{post.content |safe}}
+                </div>
+                <div style=" color: #283c50;text-align: center;margin: auto; padding: 3rem;">
+                    Posten on : {{post.date}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

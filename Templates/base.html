@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {%endblock%}</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+    {%load static%}
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{%static 'css/all.css'%}">
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css'%}">
+    <!-- <link rel="stylesheet" href="{%static 'css/aos.css'%}"> -->
+    <link rel="stylesheet" href="{%static 'css/Style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/scrollbar.css'%}">
+
+    <style>
+        .card img {
+          height: 150px;
+        }
+      </style>
+
+</head>
+
+<body>
+    <!-- <div style="background-color: #0c252f;"> -->
+    <div style="background-color: #e7e7e7;">
+        {%include 'navbar.html'%}
+
+        {%block body%} {%endblock%}
+    </div>
+
+
+    {%load static%}
+
+    <!-- Jquery Library file -->
+    <script src="{%static 'js/Jquery3.4.1.min.js'%}"></script>
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="{%static 'js/owl.carousel.min.js'%}"></script>
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="{%static 'js/aos.js'%}"></script>
+    <!-- Custom Javascript file -->
+    <script src="{%static 'js/main.js'%}"></script>
+    <script src="{%static 'js/po.js'%}"></script>
+
+</body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+            <h2>About us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia atque nemo ad modi officiis
+                iure, autem nulla tenetur repellendus.</p>
+        </div>
+        <!-- <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+            <h2>Newsletter</h2>
+            <p>Stay update with our latest</p>
+            <div class="form-element">
+                <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+            </div>
+        </div>
+        <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+            <h2>Instagram</h2>
+            <div class="flex-row">
+                <img src="./assets/instagram/thumb-card3.png" alt="insta1">
+                <img src="./assets/instagram/thumb-card4.png" alt="insta2">
+                <img src="./assets/instagram/thumb-card5.png" alt="insta3">
+            </div>
+            <div class="flex-row">
+                <img src="./assets/instagram/thumb-card6.png" alt="insta4">
+                <img src="./assets/instagram/thumb-card7.png" alt="insta5">
+                <img src="./assets/instagram/thumb-card8.png" alt="insta6">
+            </div>
+        </div> -->
+        <div class="follow" data-aos="fade-left" data-aos-delay="200">
+            <h2>Follow us</h2>
+            <p>Let us be Social</p>
+            <div>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+    <div class="rights flex-row">
+        <h4 class="text-gray">
+            Copyright ©2021 All rights reserved | Made by
+            <a href="https://taimoor-hassan.github.io/portfolio/" target="_black">Taimoor</a>
+        </h4>
+    </div>
+    <a href="#top" class="move-up">
+        <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+    </a>
+</footer>
+
+</html>

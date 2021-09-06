@@ -1,0 +1,45 @@
+{%load static%}
+
+<nav class="nav" id="nav">
+    <div class="nav-menu flex-row">
+        <div class="nav-brand">
+            <a href="/" class="text-gray">Technology</a>
+        </div>
+        <div class="toggle-collapse">
+            <div class="toggle-icons">
+                <i class="fas fa-bars" onclick="toggleClass()"></i>
+            </div>
+        </div>
+        <div>
+            <ul class="nav-items">
+                <li class="nav-link">
+                    <a href="/">Home</a>
+                </li>
+                {% for c in category %}
+                <li class="nav-link"><a href="/cdetail/{{c.url}}">{{c.title}}</a></li>
+                {%endfor%}
+                <li class="nav-link">
+                    <a target="_blank" href="/admin">Admin</a>
+                </li>
+            </ul>
+        </div>
+        <div class="social text-gray">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</nav>
+
+<script>
+function toggleClass() {
+    n=document.getElementById("nav")
+    if (n.className=='nav') {
+        n.className='nav collapse';
+    }else {
+        n.className='nav';
+    }
+    
+}
+</script>

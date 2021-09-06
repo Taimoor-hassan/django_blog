@@ -1,0 +1,160 @@
+{%extends 'base.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%load static%}
+
+
+{%block body%}
+<main>
+
+  <!------------------------ Site Title ---------------------->
+
+  <!-- <section class="site-title">
+    <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+      <h3>Tours & Travels</h3>
+      <h1>Amazing Place on Earth</h1>
+      <button class="btn">Explore</button>
+    </div>
+  </section> -->
+
+  <!------------x----------- Site Title ----------x----------->
+
+  <!-- --------------------- Blog Carousel ----------------- -->
+
+  <!-- <section>
+    <div class="blog">
+      <div class="container">
+        <div class="owl-carousel owl-theme blog-post">
+
+          {%for c in category%}
+          <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+            <img src="/media/{{c.images}}" alt="post-1">
+            <div class="blog-title">
+              <h3>{{c.discription}}</h3>
+              <button class="btn btn-blog">{{c.title}}</button>
+              <span>2 minutes</span>
+            </div>
+          </div>
+          {%endfor%}
+     
+        </div>
+        <div class="owl-navigation">
+          <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+          <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ----------x---------- Blog Carousel --------x-------- -->
+
+  <!-- ---------------------- Site Content -------------------------->
+
+  <section class="container" style="padding-top:3.5rem;">
+    <div class="site-content">
+      <div class="posts">
+        <center><h2>Latest Posts</h2></center>
+
+        {% for p in post reversed %}
+        <div class="post-content" data-aos="zoom-in" data-aos-delay="200" style="padding-bottom: 6rem;">
+          <hr>
+          <div class="post-image">
+            <div>
+              <img src="/media/{{p.image}}" class="img" alt="blog1">
+            </div>
+            <div class="post-info flex-row">
+              <span style="text-transform: uppercase;"><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;{{p.user}}</span>
+              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;{{p.date}}</span>
+            </div>
+          </div>
+          <div class="post-title">
+            <a href="/postdetail/{{p.url}}" style="text-transform: uppercase;">{{p.title}}</a>
+            <hr>
+            <p>{{p.content |truncatewords:60 |safe}}
+            </p>
+            <a href="/postdetail/{{p.url}}"><button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+          </div>
+        </div>
+        {%endfor%}
+
+        
+        <!-- 
+          <hr>
+          <div class="pagination flex-row">
+          <a href="#"><i class="fas fa-chevron-left"></i></a>
+          <a href="#" class="pages">1</a>
+          <a href="#" class="pages">2</a>
+          <a href="#" class="pages">3</a>
+          <a href="#"><i class="fas fa-chevron-right"></i></a>
+        </div> -->
+
+      </div>
+      <aside class="sidebar">
+        <div class="category">
+          <h2>Category</h2>
+          <hr>
+          <ul class="category-list" style="padding-top: 1.5rem;">
+
+            {%for c in category%}
+            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+              <a href="/cdetail/{{c.url}}">{{c.title}}</a>
+              {%for p in post %}
+              <span>{{p.posts_count}}</span>
+              {%endfor%}
+            </li>
+            {%endfor%}
+
+          </ul>
+        </div>
+        <div class="popular-post">
+          <h2>Earlier Posts</h2>
+          <hr>
+
+          {%for p in post %}
+
+          <div class="post-content" data-aos="flip-up" data-aos-delay="200" style="padding-top: 2rem;">
+            <div class="post-image">
+              <div>
+                <img src="/media/{{p.image}}" class="img" alt="blog1">
+              </div>
+              <div class="post-info flex-row">
+                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;{{p.date}}</span>
+                <span style="text-transform: uppercase;">{{p.title}}</span>
+              </div>
+            </div>
+            <div class="post-title">
+              <a href="/postdetail/{{p.url}}">{{p.discription}}</a>
+            </div>
+          </div>
+          {%endfor%}
+         
+        </div>
+        <!-- <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+          <h2>Newsletter</h2>
+          <hr>
+          <div class="form-element">
+            <input type="text" class="input-element" placeholder="Email">
+            <button class="btn form-btn">Subscribe</button>
+          </div>
+        </div> -->
+        <div class="popular-tags">
+          <h2>Popular Tags</h2>
+          <hr>
+          <div class="tags flex-row" style="padding-top: 1.5rem;">
+            {% for c in category reversed  %}
+            <a href="/cdetail/{{c.url}}"><span class="tag" data-aos="flip-up" data-aos-delay="100">{{c.title}}</span></a></li>
+            {%endfor%}
+
+            <span class="tag" data-aos="flip-up" data-aos-delay="100">{{c.title}}</span>
+            
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- -----------x---------- Site Content -------------x------------>
+
+</main>
+{%endblock%}
